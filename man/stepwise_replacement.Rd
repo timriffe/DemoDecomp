@@ -4,36 +4,36 @@
 \alias{stepwise_replacement}
 \title{implementation of the decomposition algorithm of stepwise replacement}
 \usage{
-stepwise_replacement(func, rates1, rates2, symmetrical = TRUE,
+stepwise_replacement(func, pars1, pars2, symmetrical = TRUE,
   direction = "up", ...)
 }
 \arguments{
 \item{func}{A function specified by the user. This must be able to take the vectors \code{rates1} or 
-\code{rates2} as its argument, and to return the value of the function, \code{y}, when evaluated for 
+\code{pars2} as its argument, and to return the value of the function, \code{y}, when evaluated for 
 these rates. It may also have additional arguments, not to be decomposed.}
 
-\item{rates1}{vector of covariates to be passed on as arguments to \code{func()}. Covariates
-can be in any order, as long as \code{func()} knows what to do with them. \code{rates1} is for time 1 
-(or population 1).}
-
-\item{rates2}{is the same as \code{rates1} but for time/population 2.}
+\item{pars2}{is the same as \code{pars1} but for time/population 2.}
 
 \item{symmetrical}{logical. default \code{TRUE} as recommended by authors. Shall we average the results of replacing 1 with 2 and 2 with 1?}
 
 \item{direction}{character. One of \code{"up"}, \code{"down"}, or \code{"both"}. Default \code{"up"}, as recommended by authors.}
 
 \item{\dots}{optional parameters to pass on to \code{func()}.}
+
+\item{rates1}{vector of covariates to be passed on as arguments to \code{func()}. Covariates
+can be in any order, as long as \code{func()} knows what to do with them. \code{pars1} is for time 1 
+(or population 1).}
 }
 \value{
 a matrix of the variable effects that is organized in the same way as 
-\code{rates1} and \code{rates2}.
+\code{pars1} and \code{pars2}.
 }
 \description{
 This implements the algorithm described in Andreev et al (2002), with defaults set
 to approximate their recommendations for replacement ordering and result averaging.
 }
 \details{
-The \code{symmetrical} argument toggles whether or not we replace rates1 with rates2 (\code{FALSE}), 
+The \code{symmetrical} argument toggles whether or not we replace pars1 with pars2 (\code{FALSE}), 
 or take the arithmetic average or replacement in both directions. \code{direction} refers to whether we go 
 from the bottom up or top down, or take the arithmetic average of these when replacing vector elelements. 
 Although the total difference will always sum correctly, the calculated contribution from individual components 

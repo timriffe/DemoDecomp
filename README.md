@@ -4,3 +4,30 @@
 General demographic decomposition methods
 
 
+```r
+# install.packages("devtools")
+
+library(devtools)
+install_github("timriffe/DemoDecomp")
+```
+
+Then you can run the examples like so:
+
+```r
+library(DemoDecomp)
+data(rates1)
+data(rates2)
+# we need rates1 and rates2 as vectors
+rates1 <- c(rates1)
+rates2 <- c(rates2)
+A <- horiuchi(func = R0vec,
+               pars1 = rates1,
+               pars2 = rates2,
+               N = 10,
+               pfem = .4886) 
+B <- stepwise_replacement(func = R0vec,
+               pars1 = rates1,
+               pars2 = rates2,
+               N = 10,
+               pfem = .4886)                
+```
