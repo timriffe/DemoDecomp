@@ -20,14 +20,19 @@ data(rates2)
 # we need rates1 and rates2 as vectors
 rates1 <- c(rates1)
 rates2 <- c(rates2)
+
+?horiuchi
 A <- horiuchi(func = R0vec,
                pars1 = rates1,
                pars2 = rates2,
                N = 10,
                pfem = .4886) 
+               
+?stepwise_replacement      
 B <- stepwise_replacement(func = R0vec,
                pars1 = rates1,
                pars2 = rates2,
-               N = 10,
-               pfem = .4886)                
+               pfem = .4886,
+               symmetrical = TRUE,
+               direction = "up")                
 ```
