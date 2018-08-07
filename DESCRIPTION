@@ -1,7 +1,7 @@
 Package: DemoDecomp
 Type: Package
 Title: Decompose Demographic Functions
-Version: 0.9.0
+Version: 1.0.0
 Date: 2018-08-07
 Authors@R: c(
    person("Tim", "Riffe", role = c("aut", "cre"), 

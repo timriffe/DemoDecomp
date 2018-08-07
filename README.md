@@ -37,4 +37,4 @@ B <- stepwise_replacement(func = R0vec,
                direction = "up")                
 ```
 
-This package supercedes [`DecompHoriuchi`](https://github.com/timriffe/DecompHoriuchi)
+This package supersedes [`DecompHoriuchi`](https://github.com/timriffe/DecompHoriuchi)
