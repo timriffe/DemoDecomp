@@ -46,7 +46,7 @@
 #'               pars1 = rates1,
 #'               pars2 = rates2,
 #'               N = 10,
-#'               pfem = .49)
+#'               pfem = .4886)
 #' # the output, A, is also a single vector. Each element corresponds 
 #' # to the effect of changes in that particular covariate toward the 
 #' # overall change in the function value.
@@ -75,7 +75,8 @@
 #' segments(seq(from=0,to=90,by=10),0,seq(from=0,to=90,by=10),-.027,lty=2,col="grey")
 #' text(seq(from=0,to=90,by=10),-.027,seq(from=0,to=90,by=10),pos=1,xpd=T)
 #' legend("bottomright",fill=c("yellow","green"),legend=c("contrib from change in Lx",
-#' "contrib from change in Fx"),title="age specific contrib of changes in Fx and Lx",bg="white") }
+#' "contrib from change in Fx"),title="age specific contrib of changes in Fx and Lx",bg="white") 
+#' }
 #' 
 #' @export 
 
@@ -114,7 +115,8 @@ horiuchi <-
 #' lines(rates2[,1],col="green")
 #' # compare Fx
 #' plot(rates1[,2],type='l',col="blue")
-#' lines(rates2[,2],col="green") }
+#' lines(rates2[,2],col="green") 
+#' }
 #' 
 #' @keywords datasets
 #' 
@@ -135,7 +137,8 @@ horiuchi <-
 #' lines(rates2[,1],col="green")
 #' # compare Fx
 #' plot(rates1[,2],type='l',col="blue")
-#' lines(rates2[,2],col="green") }
+#' lines(rates2[,2],col="green") 
+#' }
 #' 
 #' @keywords datasets
 #' @docType data 
@@ -154,7 +157,7 @@ horiuchi <-
 #' \code{Lx} and \code{Fx} should for this function be of the same length.
 #' @param pfem the proportion female of births. Something like .49, .48, or (1/(2.05)). This can either be specified as a single number, or it may be allowed to vary by age. For the later case, be sure to specify a value for each age (\code{length(x)/2} values). Default .4886.
 #' 
-#' @details The main feature that functions need to have when specified for \code{horiuchi()} or \code{stepwise_replacement()} is that the rates must all go into a (potentially long) vector, probably consisting in your rate vectors one after the other. Really the decomposition function does not care how things are arranged in the vector- the components of change vector that is returned from \code{horiuchi()} will be  arranged in exactly the same way as its input rate vectors, so as long as you know how to sort it out, and your function can extract what it needs from the vectors, then it can be specified in any way. For this particular example function, \code{R0vec()}, \code{x} must be specified with either Lx followed by Fx or vice versa. It would also be possible to redefine the function to place \code{pfem} in with the rates vector, \code{x}, which would allow this item to be decomposed too. Here it is specified separately in order to demonstrate passing on parameters to the function within \code{horiuchi()}.
+#' @details The main feature that functions need to have when specified for \code{horiuchi()} or \code{stepwise\_replacement()} is that the rates must all go into a (potentially long) vector, probably consisting in your rate vectors one after the other. Really the decomposition function does not care how things are arranged in the vector- the components of change vector that is returned from \code{horiuchi()} will be  arranged in exactly the same way as its input rate vectors, so as long as you know how to sort it out, and your function can extract what it needs from the vectors, then it can be specified in any way. For this particular example function, \code{R0vec()}, \code{x} must be specified with either Lx followed by Fx or vice versa. It would also be possible to redefine the function to place \code{pfem} in with the rates vector, \code{x}, which would allow this item to be decomposed too. Here it is specified separately in order to demonstrate passing on parameters to the function within \code{horiuchi()}.
 #' 
 #' @return the value of R0 for the given set of rates and proportion female of births.
 #' 

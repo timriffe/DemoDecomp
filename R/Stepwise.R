@@ -12,10 +12,10 @@
 #' can vary greatly depending on the order in general. Defaults are set to symmetrically replace from the bottom 
 #' up, per the authors' suggestion.
 #' 
-#' @param func A function specified by the user. This must be able to take the vectors \code{rates1} or 
+#' @param func A function specified by the user. This must be able to take the vectors \code{pars1} or 
 #' \code{pars2} as its argument, and to return the value of the function, \code{y}, when evaluated for 
 #' these rates. It may also have additional arguments, not to be decomposed.
-#' @param rates1 vector of covariates to be passed on as arguments to \code{func()}. Covariates
+#' @param pars1 vector of covariates to be passed on as arguments to \code{func()}. Covariates
 #' can be in any order, as long as \code{func()} knows what to do with them. \code{pars1} is for time 1 
 #' (or population 1).
 #' @param pars2 is the same as \code{pars1} but for time/population 2.

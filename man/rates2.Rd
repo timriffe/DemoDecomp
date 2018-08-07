@@ -21,7 +21,8 @@ plot(rates1[,1],type='l',col="blue")
 lines(rates2[,1],col="green")
 # compare Fx
 plot(rates1[,2],type='l',col="blue")
-lines(rates2[,2],col="green") }
+lines(rates2[,2],col="green") 
+}
 
 }
 \keyword{datasets}

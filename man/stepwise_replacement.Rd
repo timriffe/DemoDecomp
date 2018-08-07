@@ -8,9 +8,13 @@ stepwise_replacement(func, pars1, pars2, symmetrical = TRUE,
   direction = "up", ...)
 }
 \arguments{
-\item{func}{A function specified by the user. This must be able to take the vectors \code{rates1} or 
+\item{func}{A function specified by the user. This must be able to take the vectors \code{pars1} or 
 \code{pars2} as its argument, and to return the value of the function, \code{y}, when evaluated for 
 these rates. It may also have additional arguments, not to be decomposed.}
+
+\item{pars1}{vector of covariates to be passed on as arguments to \code{func()}. Covariates
+can be in any order, as long as \code{func()} knows what to do with them. \code{pars1} is for time 1 
+(or population 1).}
 
 \item{pars2}{is the same as \code{pars1} but for time/population 2.}
 
@@ -19,10 +23,6 @@ these rates. It may also have additional arguments, not to be decomposed.}
 \item{direction}{character. One of \code{"up"}, \code{"down"}, or \code{"both"}. Default \code{"up"}, as recommended by authors.}
 
 \item{\dots}{optional parameters to pass on to \code{func()}.}
-
-\item{rates1}{vector of covariates to be passed on as arguments to \code{func()}. Covariates
-can be in any order, as long as \code{func()} knows what to do with them. \code{pars1} is for time 1 
-(or population 1).}
 }
 \value{
 a matrix of the variable effects that is organized in the same way as 
