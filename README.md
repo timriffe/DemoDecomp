@@ -1,2 +1,2 @@
 # DemoDecomp
-General decographic decomposition methods
+General demographic decomposition methods
