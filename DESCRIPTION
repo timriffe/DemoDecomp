@@ -3,8 +3,8 @@ Type: Package
 Title: Decompose Demographic Functions
 Version: 1.0.0
 Date: 2018-08-07
-Authors@R: c(person("Tim", "Riffe", role = c("aut", "cre"), 
-          email = "tim.riffe@gmail.com"))
+Author: Tim Riffe
+Maintainer: Tim Riffe <tim.riffe@gmail.com>
 Description: Two general demographic decomposition methods are offered: Pseudo-continuous decomposition and stepwise replacement decomposition.
 License: GPL-2
 LazyLoad: yes

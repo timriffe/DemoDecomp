@@ -7,4 +7,7 @@ This is a first release of the DemoDecomp package, which has so far only been av
 * Ubuntu Linux 16.04 LTS, R-release, GCC
 * Fedora Linux, R-devel, clang, gfortran
 ### via devtools::check_win*()
+* 
+
+## R CMD check results
 
