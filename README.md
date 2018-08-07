@@ -36,3 +36,5 @@ B <- stepwise_replacement(func = R0vec,
                symmetrical = TRUE,
                direction = "up")                
 ```
+
+This package supercedes [`DecompHoriuchi`](https://github.com/timriffe/DecompHoriuchi)
