@@ -16,6 +16,11 @@ shhh(load_all("/home/tim/git/DemoDecomp"))
 
 # do this whenever major changes happen
 check("/home/tim/git/DemoDecomp")
+check_win_devel("/home/tim/git/DemoDecomp") # done
+check_win_release("/home/tim/git/DemoDecomp")
+check_win_oldrelease("/home/tim/git/DemoDecomp")
+check_rhub("/home/tim/git/DemoDecomp", email = "tim.riffe@gmail.com", interactive = FALSE)
+?check_win_release
 #build(pkg = "/home/tim/git/DemoDecomp", path = "/home/tim/Desktop")
 #?devtools::build
 #devtools::use_testthat("/home/tim/git/DemoDecomp")
@@ -25,7 +30,9 @@ install_github("timriffe/DemoDecomp")
 #use_appveyor("/home/tim/git/DemoDecomp")
 #use_travis("/home/tim/git/DemoDecomp")
 #use_coverage(pkg = "/home/tim/git/DemoDecomp", type = c("codecov", "coveralls"))
-build_win(pkg = "DemoDecomp") 
+
+
+
 
 length(dir("/home/tim/git/DemoTools/man"))
 
