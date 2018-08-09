@@ -8,4 +8,4 @@ dev
 ^\.Rproj\.user$
 ^README\.md
 ^cran-comments\.md
-^NEWS\.md
+^CRAN-RELEASE$

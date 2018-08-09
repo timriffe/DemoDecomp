@@ -25,6 +25,8 @@ check_rhub("/home/tim/git/DemoDecomp", email = "tim.riffe@gmail.com", interactiv
 library(spelling)
 spell_check()
 
+devtools::release()
+
 #build(pkg = "/home/tim/git/DemoDecomp", path = "/home/tim/Desktop")
 #?devtools::build
 #devtools::use_testthat("/home/tim/git/DemoDecomp")
