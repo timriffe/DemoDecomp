@@ -2,7 +2,7 @@
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/timriffe/DemoDecomp?branch=master&svg=true)](https://ci.appveyor.com/project/timriffe/DemoDecomp)
 # DemoDecomp
 General demographic decomposition methods
-[1] "[![](https://img.shields.io/badge/devel%20version-0.6.104-yellow.svg)](https://github.com/timriffe/DemoDecomp)"
+[![](https://img.shields.io/badge/devel%20version-0.6.104-yellow.svg)](https://github.com/timriffe/DemoDecomp)
 
 
 ```r
