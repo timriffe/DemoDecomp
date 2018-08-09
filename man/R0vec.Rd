@@ -26,3 +26,9 @@ It calculates the sum of the row products of \code{rates} multiplied by \code{pf
 \details{
 The main feature that functions need to have when specified for \code{horiuchi()} or \code{stepwise\_replacement()} is that the rates must all go into a (potentially long) vector, probably consisting in your rate vectors one after the other. Really the decomposition function does not care how things are arranged in the vector- the components of change vector that is returned from \code{horiuchi()} will be  arranged in exactly the same way as its input rate vectors, so as long as you know how to sort it out, and your function can extract what it needs from the vectors, then it can be specified in any way. For this particular example function, \code{R0vec()}, \code{x} must be specified with either Lx followed by Fx or vice versa. It would also be possible to redefine the function to place \code{pfem} in with the rates vector, \code{x}, which would allow this item to be decomposed too. Here it is specified separately in order to demonstrate passing on parameters to the function within \code{horiuchi()}.
 }
+\examples{
+data(rates1)
+# take vec:
+x <- c(rates1)
+R0vec(x)
+}

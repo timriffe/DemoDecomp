@@ -22,7 +22,7 @@
 #' If \code{pars1} are observations from 2005 and \code{pars2} are observations from 2006 an \code{N} of 20 would imply a delta of 1/20 of a year for each integration step. Higher \code{N} provides finer results (a lower total residual), but takes longer to compute. In general, there are decreasing returns to higher \code{N}. \code{sum(effectmat)} ought to approximate \code{func(rates2)-func(rates1)}.
 #' 
 #' @return returns \code{effectmat}, a matrix of the variable effects that is organized in the same way as \code{pars1} and \code{pars2}. 
-#' 
+#' @importFrom Rdpack reprompt
 #' @references 
 #' \insertRef{horiuchi2008decomposition}{DemoDecomp}
 #' 
@@ -163,10 +163,11 @@ horiuchi <-
 #' 
 #' @export 
 #' @examples 
-#' data(rates1}
+#' data(rates1)
 #' # take vec:
 #' x <- c(rates1)
 #' R0vec(x)
+
 R0vec <-
 		function(x, pfem = .4886){
 

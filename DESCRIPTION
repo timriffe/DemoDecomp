@@ -8,10 +8,11 @@ Maintainer: Tim Riffe <tim.riffe@gmail.com>
 Description: Two general demographic decomposition methods are offered: Pseudo-continuous decomposition and stepwise replacement decomposition.
 License: GPL-2
 LazyLoad: yes
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
 Suggests: covr,
     testthat
 RdMacros: Rdpack
 Imports: Rdpack
 Depends: R (>= 2.10)
 BugReports: https://github.com/timriffe/DemoDecomp/issues
+Encoding: UTF-8
