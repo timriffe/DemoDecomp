@@ -35,11 +35,12 @@ to approximate their recommendations for replacement ordering and result averagi
 \details{
 The \code{symmetrical} argument toggles whether or not we replace pars1 with pars2 (\code{FALSE}), 
 or take the arithmetic average or replacement in both directions. \code{direction} refers to whether we go 
-from the bottom up or top down, or take the arithmetic average of these when replacing vector elelements. 
+from the bottom up or top down, or take the arithmetic average of these when replacing vector elements. 
 Although the total difference will always sum correctly, the calculated contribution from individual components 
 can vary greatly depending on the order in general. Defaults are set to symmetrically replace from the bottom 
 up, per the authors' suggestion.
 }
 \references{
-E. Andreev, V. Shkolnikov, and A. Begun (2002) Algorithm for decomposition of differences between aggregate demographic measures and its application to life expectancies, healthy life expectancies, parity-progression ratios and total fertility rates. Demographic Research v7, n14
+\insertRef{horiuchi2008decomposition}{DemoDecomp}
+\insertRef{andreev2012excel}{DemoDecomp}
 }

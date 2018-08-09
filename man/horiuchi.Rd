@@ -26,7 +26,7 @@ returns \code{effectmat}, a matrix of the variable effects that is organized in 
 }
 \description{
 This is an exact R implementation of the decomposition code in Matlab offered by the authors in
-the supplementary material given here: http://www.demog.berkeley.edu/~jrw/Papers/decomp.suppl.pdf. The 
+the supplementary material given here: <http://www.demog.berkeley.edu/~jrw/Papers/decomp.suppl.pdf>. The 
 difference between \code{DecompContinuous()} and this function is that \code{DecompContinuousOrig} takes 
 \code{rates1} and \code{rates2} as single vectors, rather than as matrices, and output is also returned as a
 vector. This difference makes the function more flexible, but may add a step when writing the function to
@@ -91,5 +91,6 @@ legend("bottomright",fill=c("yellow","green"),legend=c("contrib from change in L
 
 }
 \references{
-\insertRef{horiuchi2008decomposition}{DemoDecomp}
+\insertRef{andreev2002algorithm}{DemoDecomp}
+\insertRef{andreev2002algorithm}{DemoDecomp}
 }

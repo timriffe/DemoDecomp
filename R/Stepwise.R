@@ -7,7 +7,7 @@
 #' to approximate their recommendations for replacement ordering and result averaging.
 #' @details The \code{symmetrical} argument toggles whether or not we replace pars1 with pars2 (\code{FALSE}), 
 #' or take the arithmetic average or replacement in both directions. \code{direction} refers to whether we go 
-#' from the bottom up or top down, or take the arithmetic average of these when replacing vector elelements. 
+#' from the bottom up or top down, or take the arithmetic average of these when replacing vector elements. 
 #' Although the total difference will always sum correctly, the calculated contribution from individual components 
 #' can vary greatly depending on the order in general. Defaults are set to symmetrically replace from the bottom 
 #' up, per the authors' suggestion.
@@ -23,7 +23,9 @@
 #' @param direction character. One of \code{"up"}, \code{"down"}, or \code{"both"}. Default \code{"up"}, as recommended by authors.
 #' @param \dots optional parameters to pass on to \code{func()}.
 #' 
-#' @references E. Andreev, V. Shkolnikov, and A. Begun (2002) Algorithm for decomposition of differences between aggregate demographic measures and its application to life expectancies, healthy life expectancies, parity-progression ratios and total fertility rates. Demographic Research v7, n14
+#' @references
+#' \insertRef{horiuchi2008decomposition}{DemoDecomp}
+#' \insertRef{andreev2012excel}{DemoDecomp}
 #' @export
 #' @return a matrix of the variable effects that is organized in the same way as 
 #' \code{pars1} and \code{pars2}.
@@ -83,10 +85,10 @@ stepwise_replacement <- function(func, pars1, pars2, symmetrical = TRUE, directi
 }
 
 #' @title an abridged lifetable based on M(x)
-#' @description Implements the abridged lifetable formulas given in the supplementary material to Andreev et al (2012). An entire lifetable is calculated, but only lfie expectancy at birth is returned.
+#' @description Implements the abridged lifetable formulas given in the supplementary material to Andreev et. al. (2012). An entire lifetable is calculated, but only life expectancy at birth is returned.
 #' @details Chiang's a(x) is assumed in the following way: \eqn{a(0) = 0.07 + 1.7 * M(0)}, \eqn{a(1) = 1.6}, \eqn{a(\omega) = \frac{1}{M(\omega)}}, and all others are assumed at mid interval. The last age is assumed open. Everything else is pretty standard.
 #' @param Mx numeric vector of abridged mortality rates.
-#' @param Age integer, abrdged age lower bounds. 
+#' @param Age integer, abridged age lower bounds. 
 #' @param radix numeric. Can be anything positive.
 #' @references
 #' \insertRef{andreev2002algorithm}{DemoDecomp}

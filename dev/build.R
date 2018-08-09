@@ -22,10 +22,13 @@ check_win_oldrelease("/home/tim/git/DemoDecomp") # done
 
 check_rhub("/home/tim/git/DemoDecomp", email = "tim.riffe@gmail.com", interactive = FALSE)
 
+library(spelling)
+spell_check()
+
 #build(pkg = "/home/tim/git/DemoDecomp", path = "/home/tim/Desktop")
 #?devtools::build
 #devtools::use_testthat("/home/tim/git/DemoDecomp")
-1+1
+
 install_github("timriffe/DemoDecomp")
 # these created the necessary files to run automatic remote code testing
 #use_appveyor("/home/tim/git/DemoDecomp")

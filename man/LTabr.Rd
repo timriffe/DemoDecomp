@@ -9,7 +9,7 @@ LTabr(Mx, Age = c(0, 1, cumsum(rep(5, length(Mx) - 2))), radix = 1e+05)
 \arguments{
 \item{Mx}{numeric vector of abridged mortality rates.}
 
-\item{Age}{integer, abrdged age lower bounds.}
+\item{Age}{integer, abridged age lower bounds.}
 
 \item{radix}{numeric. Can be anything positive.}
 }
@@ -17,7 +17,7 @@ LTabr(Mx, Age = c(0, 1, cumsum(rep(5, length(Mx) - 2))), radix = 1e+05)
 numeric life expectancy at birth
 }
 \description{
-Implements the abridged lifetable formulas given in the supplementary material to Andreev et al (2012). An entire lifetable is calculated, but only lfie expectancy at birth is returned.
+Implements the abridged lifetable formulas given in the supplementary material to Andreev et. al. (2012). An entire lifetable is calculated, but only life expectancy at birth is returned.
 }
 \details{
 Chiang's a(x) is assumed in the following way: \eqn{a(0) = 0.07 + 1.7 * M(0)}, \eqn{a(1) = 1.6}, \eqn{a(\omega) = \frac{1}{M(\omega)}}, and all others are assumed at mid interval. The last age is assumed open. Everything else is pretty standard.
