@@ -1,4 +1,7 @@
-# Changes from previous package `DecompHoriuchi`
+# Changes from version 1.0.0 
+*  placeholder
+
+# Changes from previous package `DecompHoriuchi` 
 7 Aug 2018. `DemoData` supersedes the `DecompHoriuchi` package, which was only available on github. 
 
 *  Only single-vector methods are included
