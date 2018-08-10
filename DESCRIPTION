@@ -6,7 +6,7 @@ Date: 2018-08-09
 Author: Tim Riffe
 Maintainer: Tim Riffe <tim.riffe@gmail.com>
 Description: Two general demographic decomposition methods are offered: Pseudo-continuous decomposition and stepwise replacement decomposition.
-License: GPL-2
+License: file LICENSE
 LazyLoad: yes
 RoxygenNote: 6.1.0
 Suggests: covr,
