@@ -1,0 +1,49 @@
+---
+title: "DemoDecomp: an R Package for General Demographic Decomposition Methods"
+author: "author redacted"
+date: "August 10, 2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Abstract
+
+### Background 
+Most demographic indices are functions of parameters, such as age-structured rates. There are many case-specific methods to decompose differences in indices to differences in parameters, but only a few general methods exist. 
+
+### Objective
+We aim to demonstrate the use of two general decomposition methods available in the `R` package`DemoDecomp`. 
+
+### Methods
+Two methods are demonstrated: pseudo-continuous decomposition (`horiuchi()`) and stepwise replacement decomposition  (`stepwise_replacement()`) .
+
+### Results
+
+### Conclusions
+
+### Contribution
+
+
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
