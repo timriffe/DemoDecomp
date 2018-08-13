@@ -1,16 +1,15 @@
 Package: DemoDecomp
 Type: Package
 Title: Decompose Demographic Functions
-Version: 1.0.0.9000
-Date: 2018-08-09
+Version: 1.0.1
+Date: 2018-08-13
 Author: Tim Riffe
 Maintainer: Tim Riffe <tim.riffe@gmail.com>
-Description: Two general demographic decomposition methods are offered: Pseudo-continuous decomposition and stepwise replacement decomposition.
-License: file LICENSE
+Description: Two general demographic decomposition methods are offered: Pseudo-continuous decomposition proposed by Horiuchi, Wilmoth, and Pletcher (2008) <doi:10.1353/dem.0.0033> and stepwise replacement decomposition proposed by Andreev, Shkolnikov and Begun (2002) <doi:10.4054/DemRes.2002.7.14>.
+License: GPL-3
 LazyLoad: yes
 RoxygenNote: 6.1.0
-Suggests: covr,
-    testthat
+Suggests: covr
 RdMacros: Rdpack
 Imports: Rdpack
 Depends: R (>= 2.10)

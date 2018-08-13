@@ -31,6 +31,7 @@
 #' 
 #' data(rates1)
 #' data(rates2)
+#' 
 #' # we need rates1 and rates2 as vectors
 #' rates1 <- c(rates1)
 #' rates2 <- c(rates2)
@@ -50,18 +51,29 @@
 #'               pfem = .4886)
 #' # the output, A, is also a single vector. Each element corresponds 
 #' # to the effect of changes in that particular covariate toward the 
-#' # overall change in the function value.
+#' # overall change in the function value. sum(A) should be close to
+#' # original difference
+#' (check1 <- R0vec(rates2) - R0vec(rates1)) 
+#' (check2 <- sum(A))
 #' 
-#' # this package does not supply default plotting functions, but one 
+#' \dontshow{
+#' # de facto unit test. In this case the residual is very tiny,
+#' # but if differences are very large and there are very many components,
+#' # then the residual can be larger albeit trivial. In that case
+#' # increase N and go make a coffee.
+#' stopifnot(abs(check1 - check2) < 1e-6)
+#' }
+#' 
+#' # This package does not supply default plotting functions, but one 
 #' # strategy might be the following:
-#' \dontrun{
+#' 
 #' # reorder A into a matrix (sideways):
 #' A <- t(matrix(A,ncol=2))
 #' # call barplot() twice, once for positive values and again for
 #' # negative values
 #' Apos <- A * .5 * (sign(A) + 1)      
 #' Aneg <- A * .5 * abs(sign(A) - 1)   
-#' 
+#' \dontrun{
 #' barplot(Apos, 
 #'         width = rep(1, length(A) / 2),
 #'         space = 0, 
@@ -72,7 +84,12 @@
 #'         xlim=c(0, 90), 
 #'         ylab = "contrib to change in R0",
 #'         cex.axis = .7)
-#' barplot(Aneg,width=rep(1,length(A)/2),add=T,space=0,col=c("yellow","green"),axes=F,axisnames=F)
+#' barplot(Aneg, 
+#'         width = rep(1, length(A) / 2),
+#'         add = TRUE, 
+#'         space = 0,
+#'         col = c("yellow", "green"),
+#'         axes = FALSE, axisnames = FALSE)
 #' segments(seq(from=0,to=90,by=10),0,seq(from=0,to=90,by=10),-.027,lty=2,col="grey")
 #' text(seq(from=0,to=90,by=10),-.027,seq(from=0,to=90,by=10),pos=1,xpd=T)
 #' legend("bottomright",fill=c("yellow","green"),legend=c("contrib from change in Lx",
