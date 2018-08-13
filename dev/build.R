@@ -16,9 +16,9 @@ shhh(load_all("/home/tim/git/DemoDecomp"))
 
 # checks run Aug 13, 2018
 devtools::check("/home/tim/git/DemoDecomp")      # OK
-check_win_devel("/home/tim/git/DemoDecomp")      # sent
-check_win_release("/home/tim/git/DemoDecomp")  # sent
-check_win_oldrelease("/home/tim/git/DemoDecomp") # sent
+check_win_devel("/home/tim/git/DemoDecomp")      # OK
+check_win_release("/home/tim/git/DemoDecomp")    # OK
+check_win_oldrelease("/home/tim/git/DemoDecomp") # OK
  
 check_rhub("/home/tim/git/DemoDecomp", email = "tim.riffe@gmail.com", interactive = FALSE)  # sent
 
