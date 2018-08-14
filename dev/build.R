@@ -42,3 +42,4 @@ install_github("timriffe/DemoDecomp")
 
 length(dir("/home/tim/git/DemoTools/man"))
 
+build()
