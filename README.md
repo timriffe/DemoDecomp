@@ -11,6 +11,7 @@ Install from CRAN in the standard way:
 install.packages("DemoDecomp")
 ```
 
+Or install the github development version (maybe it has new toys!):
 ```r
 # install.packages("devtools")
 
