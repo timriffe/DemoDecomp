@@ -18,7 +18,7 @@ Most demographic indices are functions of parameters, such as age-structured rat
 We aim to demonstrate the use of two general decomposition methods available in the `R` package`DemoDecomp`. 
 
 ### Methods
-Two methods are demonstrated: pseudo-continuous decomposition proposed by Horiuchi et. al. (2008) and stepwise replacement decomposition  (`stepwise_replacement()`) .
+Two methods are demonstrated: pseudo-continuous decomposition proposed by Horiuchi et. al. (2008)  (`horiuchi()`) and stepwise replacement decomposition  (`stepwise_replacement()`) .
 
 ### Results
 
