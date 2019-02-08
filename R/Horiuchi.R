@@ -100,23 +100,22 @@
 
 horiuchi <-
 		function(func, pars1, pars2, N, ...){
-	# number of interval jumps   
-	y1 			<- func(pars1,...)
-	y2 			<- func(pars2,...)
-	d 			<- pars2-pars1
+
+	d 			<- pars2 - pars1
 	n 			<- length(pars1)
-	delta 		<- d/N
-	x           <- pars1 + d * matrix(rep(.5:(N-.5)/N,n), byrow = TRUE, ncol = N)
+	delta 		<- d / N
+	grad        <- matrix(rep(.5:(N - .5) / N, n),
+			              byrow = TRUE, ncol = N)
+	x           <- pars1 + d * grad
 	cc          <- matrix(0, nrow = n, ncol = N)
-	zeros       <- rep(0,n)
 	for (j in 1:N){
 		DD <- diag(delta / 2)
 		for (i in 1:n){
 			cc[i,j] <- func((x[, j] + DD[, i]), ...) - func((x[, j] - DD[, i]), ...)
 		}
 	}	
-	#cat("Error of decomposition (in %)\ne =",100*(sum(cc)/(y2-y1)-1),"\n")
-	return(rowSums(cc))
+
+	rowSums(cc)
 }
 
 #' @title Fake data generated for example.
