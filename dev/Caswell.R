@@ -39,7 +39,7 @@ ltre <- function(func, pars1, pars2, dfunc, N = 20, ...){
 	n 			<- length(pars1)
 	ddelta 		<- delta / N
 	
-	x           <- pars1 + d * matrix(rep(.5:(N - .5) / N, n), 
+	x           <- pars1 + ddelta * matrix(rep(.5:(N - .5) / N, n), 
 			                          byrow = TRUE, 
 									  ncol = N)
 	cc          <- matrix(0, nrow = n, ncol = N)
