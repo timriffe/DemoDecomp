@@ -20,7 +20,6 @@ We aim to demonstrate the use of two general decomposition methods available in 
 ### Methods
 Three methods are demonstrated: pseudo-continuous decomposition proposed by Horiuchi et. al. (2008)  (`horiuchi()`), stepwise replacement decomposition  (`stepwise_replacement()`) by Andreev et. al. (YYYY), and lifetable response experiment (`ltre()`) by Caswell (YYYY).
 
-
 ### Results
 
 ### Conclusions
