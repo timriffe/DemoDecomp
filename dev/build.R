@@ -5,7 +5,7 @@ shhh <- function(expr){
 					suppressMessages(suppressWarnings(expr))))
 	invisible(x)
 }
-setwd("/home/tim/git/DemoDecomp")
+#setwd("/home/tim/git/DemoDecomp")
 library(devtools)
 #install_github("hadley/devtools")
 # do this whenever new functions are added to /R, or whenever roxygen is updated
