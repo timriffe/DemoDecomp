@@ -12,15 +12,15 @@ library(devtools)
 devtools::document()
 
 # run this to get access to already-written functions
-shhh(load_all("/home/tim/git/DemoDecomp"))
+shhh(load_all())
 
 # checks run Aug 13, 2018
-devtools::check("/home/tim/git/DemoDecomp")      # OK
-check_win_devel("/home/tim/git/DemoDecomp")      # OK
-check_win_release("/home/tim/git/DemoDecomp")    # OK
-check_win_oldrelease("/home/tim/git/DemoDecomp") # OK
+devtools::check()      # OK
+check_win_devel()      # OK
+check_win_release()    # OK
+check_win_oldrelease() # OK
  
-check_rhub("/home/tim/git/DemoDecomp", email = "tim.riffe@gmail.com", interactive = FALSE)  # sent
+check_rhub(email = "tim.riffe@gmail.com", interactive = FALSE)  # sent
 
 library(spelling)
 spell_check()
