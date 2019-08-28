@@ -14,6 +14,7 @@ devtools::document()
 # run this to get access to already-written functions
 shhh(load_all())
 
+
 # checks run Aug 13, 2018
 devtools::check()      # OK
 check_win_devel()      # OK
