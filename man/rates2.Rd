@@ -5,7 +5,7 @@
 \alias{rates2}
 \title{Fake data generated for horiuchi example.}
 \format{numeric vector of hypothetical fertility and mortality rates
-\description{
+\describe{
 \item{Lx}{a discrete survival function at time point 2}
 \item{Fx}{age specific fertility rates at time point 2}
 }}

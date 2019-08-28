@@ -29,17 +29,14 @@
 #' A matrix with 19 rows and 6 columns
 #' @source 
 #' \url{https://www.demogr.mpg.de/en/projects_publications/publications_1904/mpidr_technical_reports/an_excel_spreadsheet_for_the_decomposition_of_a_difference_between_two_values_of_an_aggregate_4591.htm}
-"Compare"
-
-
+"Comparison"
 
 #' Fake data generated for horiuchi example.
 #' 
 #' These are used to calculate the net reproductive ratio (NRR)
 #' @format 
 #' numeric vector of hypothetical fertility and mortality rates
-#' \description{
-#' \item{Lx}{a discrete survival function at time point 1}
+#' \describe{
 #' \item{Fx}{age specific fertility rates at time point 1}
 #' }
 #' @source 
@@ -64,7 +61,7 @@
 #' These are used to calculate the net reproductive ratio (NRR)
 #' @format 
 #' numeric vector of hypothetical fertility and mortality rates
-#' \description{
+#' \describe{
 #' \item{Lx}{a discrete survival function at time point 2}
 #' \item{Fx}{age specific fertility rates at time point 2}
 #' }
