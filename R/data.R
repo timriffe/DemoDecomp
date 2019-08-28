@@ -8,7 +8,7 @@
 #' @format 
 #' A matrix with 19 rows and 6 columns
 #' @source 
-#' \url{https://www.demogr.mpg.de/en/projects_publications/publications_1904/mpidr_technical_reports/an_excel_spreadsheet_for_the_decomposition_of_a_difference_between_two_values_of_an_aggregate_4591.htm}
+#' \url{https://www.demogr.mpg.de/papers/technicalreports/tr-2010-002-files.zip}
 "Mxc1"
 
 #' Year 2002 death rates by cause for England and Wales males in abridged age classes
@@ -18,18 +18,8 @@
 #' @format 
 #' A matrix with 19 rows and 6 columns
 #' @source 
-#' \url{https://www.demogr.mpg.de/en/projects_publications/publications_1904/mpidr_technical_reports/an_excel_spreadsheet_for_the_decomposition_of_a_difference_between_two_values_of_an_aggregate_4591.htm}
+#' \url{https://www.demogr.mpg.de/papers/technicalreports/tr-2010-002-files.zip}
 "Mxc2"
-
-#' Comparison decomposition results by age and cause
-#'
-#' A matrix containing the contributions to the difference in life expectancy at birth between 2002 US males and England and Wales males. Ages (in rows) are in abridged categories, 0-85, and there are six causes, including other, in columns. The sum of the matrix is the difference in life expectancy at birth between the two populations. Values are based on symmetrical stepwise replacement from young to old ages only. This is just to make sure implementation is close.
-#'
-#' @format 
-#' A matrix with 19 rows and 6 columns
-#' @source 
-#' \url{https://www.demogr.mpg.de/en/projects_publications/publications_1904/mpidr_technical_reports/an_excel_spreadsheet_for_the_decomposition_of_a_difference_between_two_values_of_an_aggregate_4591.htm}
-"Comparison"
 
 #' Fake data generated for horiuchi example.
 #' 
