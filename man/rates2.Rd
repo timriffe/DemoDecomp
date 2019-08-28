@@ -3,13 +3,20 @@
 \docType{data}
 \name{rates2}
 \alias{rates2}
-\title{Fake data generated for example.}
-\format{An object of class \code{matrix} with 101 rows and 2 columns.}
+\title{Fake data generated for horiuchi example.}
+\format{numeric vector of hypothetical fertility and mortality rates
+\description{
+\item{Lx}{a discrete survival function at time point 2}
+\item{Fx}{age specific fertility rates at time point 2}
+}}
+\source{
+Simulated values
+}
 \usage{
 rates2
 }
 \description{
-The first column \code{Lx} is a discrete survival function for time point 2. The second column \code{Fx} are age specific fertility rates.
+These are used to calculate the net reproductive ratio (NRR)
 }
 \examples{
 \dontrun{
@@ -23,6 +30,5 @@ lines(rates2[,1],col="green")
 plot(rates1[,2],type='l',col="blue")
 lines(rates2[,2],col="green") 
 }
-
 }
 \keyword{datasets}
