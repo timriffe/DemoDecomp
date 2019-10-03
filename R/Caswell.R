@@ -27,23 +27,23 @@
 #' \insertRef{caswell1989analysis}{DemoDecomp}
 #' \insertRef{caswell2006matrix}{DemoDecomp}
 ltre <- function(func, pars1, pars2, dfunc, N = 20, ...){
-	if (missing(dfunc)){ 
-		dfunc <- numDeriv::grad
-	}
-	stopifnot(is.function(dfunc))
-    stopifnot(length(pars1) == length(pars2))
-	
-	
-	delta       <- pars2 - pars1
-	n 			<- length(pars1)
-	ddelta 		<- delta / N
-	
-	x           <- pars1 + ddelta * matrix(rep(.5:(N - .5) / N, n), 
-			                          byrow = TRUE, 
-									  ncol = N)
-	cc          <- matrix(0, nrow = n, ncol = N)
-	for (i in 1:N){
-		cc[,i] <- dfunc(func, x[,i], ...) * ddelta
-	}
-	rowSums(cc)
+  if (missing(dfunc)){ 
+    dfunc <- numDeriv::grad
+  }
+  stopifnot(is.function(dfunc))
+  stopifnot(length(pars1) == length(pars2))
+  
+  
+  delta       <- pars2 - pars1
+  n 			<- length(pars1)
+  ddelta 		<- delta / N
+  
+  x           <- pars1 + ddelta * matrix(rep(.5:(N - .5) / N, n), 
+                                         byrow = TRUE, 
+                                         ncol = N)
+  cc          <- matrix(0, nrow = n, ncol = N)
+  for (i in 1:N){
+    cc[,i] <- dfunc(func, x[,i], ...) * ddelta
+  }
+  rowSums(cc)
 }
