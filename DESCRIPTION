@@ -1,7 +1,7 @@
 Package: DemoDecomp
 Type: Package
 Title: Decompose Demographic Functions
-Version: 1.1
+Version: 1.10.000
 Date: 2019-10-03
 Author: Tim Riffe
 Maintainer: Tim Riffe <tim.riffe@gmail.com>
