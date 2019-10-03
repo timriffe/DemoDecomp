@@ -11,7 +11,9 @@ LazyLoad: yes
 RoxygenNote: 6.1.1
 Suggests: covr
 RdMacros: Rdpack
-Imports: Rdpack
+Imports: 
+  Rdpack,
+  numDeriv
 Depends: R (>= 2.10)
 BugReports: https://github.com/timriffe/DemoDecomp/issues
 Encoding: UTF-8
