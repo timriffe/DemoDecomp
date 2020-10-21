@@ -101,9 +101,9 @@
 horiuchi <-
 		function(func, pars1, pars2, N, ...){
 
-	d 			<- pars2 - pars1
-	n 			<- length(pars1)
-	delta 		<- d / N
+	d 			    <- pars2 - pars1
+	n 			    <- length(pars1)
+	delta 		  <- d / N
 	grad        <- matrix(rep(.5:(N - .5) / N, n),
 			              byrow = TRUE, ncol = N)
 	x           <- pars1 + d * grad

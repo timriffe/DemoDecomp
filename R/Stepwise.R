@@ -107,7 +107,7 @@ stepwise_replacement <- function(func, pars1, pars2, symmetrical = TRUE, directi
 		dec[, 1]              <- diff(apply(RM_1_2_up, 2, func, ...))
 	}
 	if (down){
-		dec[, 2]              <- diff(apply(RM_1_2_down, 2, func, ...))
+		dec[, 2]              <- rev(diff(apply(RM_1_2_down, 2, func, ...)))
 	}
 	
 	if (symmetrical){
@@ -115,7 +115,7 @@ stepwise_replacement <- function(func, pars1, pars2, symmetrical = TRUE, directi
 			dec[, 3]          <- -diff(apply(RM_2_1_up, 2, func, ...))
 		}
 		if (down){
-			dec[, 4]          <- -diff(apply(RM_2_1_down, 2, func, ...))
+			dec[, 4]          <- rev(-diff(apply(RM_2_1_down, 2, func, ...)))
 		}
 	}
 	
