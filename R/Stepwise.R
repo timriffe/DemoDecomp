@@ -120,7 +120,8 @@ stepwise_replacement <- function(func, pars1, pars2, symmetrical = TRUE, directi
 	}
 	
 	
-	dec_avg                   <- rowMeans(dec, na.rm = TRUE)
+	dec_avg               <- rowMeans(dec, na.rm = TRUE)
+	names(dec_avg)        <- names(pars1)
 	dec_avg
 }
 
