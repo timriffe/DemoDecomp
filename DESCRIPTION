@@ -1,14 +1,14 @@
 Package: DemoDecomp
 Type: Package
 Title: Decompose Demographic Functions
-Version: 1.10.001
-Date: 2020-10-21
+Version: 1.11
+Date: 2023-03-22
 Author: Tim Riffe
 Maintainer: Tim Riffe <tim.riffe@gmail.com>
 Description: Three general demographic decomposition methods: Pseudo-continuous decomposition proposed by Horiuchi, Wilmoth, and Pletcher (2008) <doi:10.1353/dem.0.0033>, stepwise replacement decomposition proposed by Andreev, Shkolnikov and Begun (2002) <doi:10.4054/DemRes.2002.7.14>, and lifetable response experiments proposed by Caswell (1989) <doi:10.1016/0304-3800(89)90019-7>.
 License: GPL-3
 LazyLoad: yes
-RoxygenNote: 6.1.1
+RoxygenNote: 7.2.3
 Suggests: covr
 RdMacros: Rdpack
 Imports: 

@@ -4,10 +4,12 @@
 \name{rates1}
 \alias{rates1}
 \title{Fake data generated for horiuchi example.}
-\format{numeric vector of hypothetical fertility and mortality rates
+\format{
+numeric vector of hypothetical fertility and mortality rates
 \describe{
 \item{Fx}{age specific fertility rates at time point 1}
-}}
+}
+}
 \source{
 Simulated values
 }

@@ -4,7 +4,9 @@
 \name{Mxc1}
 \alias{Mxc1}
 \title{Year 2002 death rates by cause for US males in abridged age classes}
-\format{A matrix with 19 rows and 6 columns}
+\format{
+A matrix with 19 rows and 6 columns
+}
 \source{
 \url{https://www.demogr.mpg.de/papers/technicalreports/tr-2010-002-files.zip}
 }

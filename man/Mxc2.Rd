@@ -4,7 +4,9 @@
 \name{Mxc2}
 \alias{Mxc2}
 \title{Year 2002 death rates by cause for England and Wales males in abridged age classes}
-\format{A matrix with 19 rows and 6 columns}
+\format{
+A matrix with 19 rows and 6 columns
+}
 \source{
 \url{https://www.demogr.mpg.de/papers/technicalreports/tr-2010-002-files.zip}
 }

@@ -4,8 +4,14 @@
 \alias{stepwise_replacement}
 \title{implementation of the decomposition algorithm of stepwise replacement}
 \usage{
-stepwise_replacement(func, pars1, pars2, symmetrical = TRUE,
-  direction = "up", ...)
+stepwise_replacement(
+  func,
+  pars1,
+  pars2,
+  symmetrical = TRUE,
+  direction = "up",
+  ...
+)
 }
 \arguments{
 \item{func}{A function specified by the user. This must be able to take the vectors \code{pars1} or 
