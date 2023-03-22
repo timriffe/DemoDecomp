@@ -115,7 +115,9 @@ horiuchi <-
 		}
 	}	
 
-	rowSums(cc)
+	out <- rowSums(cc)
+	names(out) <- names(pars1)
+	out
 }
 
 #' @title R0vec Calculates net reproduction, R0, according to a given set of rates Lx,fx and a fixed
