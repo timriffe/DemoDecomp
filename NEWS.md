@@ -1,5 +1,5 @@
-# Changes from version 1.0.0 
-*  placeholder
+# Changes with version 1.12 
+*  `ltre()` method added, including numerical derivative backup.
 
 # Changes from previous package `DecompHoriuchi` 
 7 Aug 2018. `DemoData` supersedes the `DecompHoriuchi` package, which was only available on github. 
