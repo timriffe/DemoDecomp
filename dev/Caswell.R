@@ -55,6 +55,10 @@ ltre <-  function (func, pars1, pars2, dfunc, N = 20, ...) {
     # 			                          byrow = TRUE, 
     # 									  ncol = N)
   }
+  # TR: added 16-9-2024 so that names can be used to reconstruct
+  # data inside func()
+  rownames(x) <- names(pars1)
+  
   cc <- matrix(0, nrow = n, ncol = N)
   for (i in 1:N) {
     if (dflag == 1){

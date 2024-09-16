@@ -108,6 +108,9 @@ horiuchi <-
 			              byrow = TRUE, ncol = N)
 	x           <- pars1 + d * grad
 	cc          <- matrix(0, nrow = n, ncol = N)
+	# TR: added 16-9-2024 so that names can be used to reconstruct
+	# data inside func()
+	rownames(x) <- names(pars1)
 	for (j in 1:N){
 		DD <- diag(delta / 2)
 		for (i in 1:n){
