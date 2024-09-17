@@ -12,3 +12,4 @@ dev
 Manuscript
 .github
 
+^CRAN-SUBMISSION$
