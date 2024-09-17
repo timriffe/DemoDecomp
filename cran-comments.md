@@ -1,43 +1,22 @@
-This is a first release of the DemoDecomp package, which has so far only been available on github under the name DecompHoriuchi.
+This is a second release of the DemoDecomp package, adding a new method, and some other minor fixes.
 
 ## Test environments
-* Ubuntu 14.04.3 LTS, R version 3.4.0
-* win-builder on x86_64-w64-mingw32 (64-bit)
-  * R version 3.5.1 (2018-07-02)
-  * R Under development (unstable) (2018-08-11 r75106)
-  * R version 3.4.4 (2018-03-15)
-* via devtools::rhub()
-  * Windows Server 2008 R2 SP1, R-devel, 32/64 bit
-  * Ubuntu Linux 16.04 LTS, R-release, GCC
-  * Fedora Linux, R-devel, clang, gfortran
-* R travis-ci Ubuntu 14.04.5 LTS.
-  * R version 3.4.4 (2017-01-27)
-  * R version 3.5.0 (2017-01-27)
-  * R Under development (unstable) (2018-08-13 r75121)
-* App-veyor
-  * i386-w64-mingw32/i386 (32-bit)
+* Ubuntu 20.04.6 LTS, R version 4.4.1
+* win-builder (Windows Server 2022 x64 )
+  * R version 4.3.3
+  * R Under development (2024-09-15 r87152 ucrt)
+  * R version 4.4.1 
+* via rhub::check_rhub()
+  * linux Ubuntu 22.04.4, R-devel
+  * macos 13.6.9, R-devel
+  * macOS 14.6.1, R-devel
+  * Microsoft Windows Server 2022 10.0.20348, R-devel
 
 ## R CMD check results
 all of the above were OK and returned
-0 errors | 0 warnings | 1 notes 
+0 errors | 0 warnings | 0 notes 
 
-NOTE: 
-1) Maintainer: ‘Tim Riffe <tim.riffe@gmail.com>’
-New submission
+Except the win-builder, which notes for all cases: "Version jumps in minor (submitted: 1.14.0, existing: 1.0.1)". 
 
-This is in order.
+2) Possibly mis-spelled words in DESCRIPTION are all cited author names, OK
 
-2) Possibly mis-spelled words in DESCRIPTION:
-  Andreev (8:232)
-  Horiuchi (8:117)
-  Pletcher (8:140)
-  Shkolnikov (8:241)
-  Wilmoth (8:127)
-these are all cited author names, OK
-
-## re: Comments received from Uwe Ligges 2018-08-12
- * Is there some reference about the method you can add in the Description field in the form Authors (year) <doi:.....>? (done)
- * We see most of your examples are wrapped in \sontrun{}. Why?
-   - I put plotting code inside \dontrun{}. Important decomposition code gets executed, also added \dontshow{} for tests to make sure code running as expected. Added example to other main decomposition function, stepwise_replacement().
-
-Many thanks
