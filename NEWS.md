@@ -1,4 +1,4 @@
-# Changes with version 1.13 
+# Changes with version 1.14 
 *  vector names now passed to `func()` in all three decomposition methods, as well as appended to output.
 
 # Changes with version 1.12 
