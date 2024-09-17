@@ -15,13 +15,14 @@ devtools::document()
 shhh(load_all())
 
 
-# checks run Aug 13, 2018
+# checks run Sept 17, 2024
 devtools::check()      # OK
-check_win_devel()      # OK
-check_win_release()    # OK
-check_win_oldrelease() # OK
+check_win_devel()      # 
+check_win_release()    # 
+check_win_oldrelease() # 
  
-check_rhub(email = "tim.riffe@gmail.com", interactive = FALSE)  # sent
+library(rhub)
+rhub_check()
 
 library(spelling)
 spell_check()
