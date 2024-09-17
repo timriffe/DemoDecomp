@@ -26,6 +26,7 @@
 #' @references 
 #' \insertRef{caswell1989analysis}{DemoDecomp}
 #' \insertRef{caswell2006matrix}{DemoDecomp}
+#' 
 ltre <- function (func, pars1, pars2, dfunc, N = 20, ...) {
   if (missing(dfunc)) {
     dfunc <- numDeriv::grad
