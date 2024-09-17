@@ -10,3 +10,5 @@ dev
 ^cran-comments\.md
 ^CRAN-RELEASE$
 Manuscript
+.github
+
