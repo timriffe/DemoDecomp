@@ -18,6 +18,7 @@
 #' As with \code{horiuchi()}, the path from \code{pars1} to \code{pars2} is linear, but other paths can be induced by parameterizing \code{func()} differently. For example, if you want proportional change from \code{pars1} to \code{pars2} then log them, and write \code{func()} to first antilog before continuing. This is not zero-friendly, but in practice power transforms give close results, so you could \code{sqrt()} and then square inside \code{func()}. If you do this, then \code{dfunc()} must be written to account for it too, or you could stick with the default numeric gradient function.
 #' 
 #' @importFrom numDeriv grad
+#' @importFrom stats approx
 #' @seealso \code{\link[numDeriv]{grad}}
 #' @inheritParams horiuchi
 #' @param ... \dots optional parameters to pass on to \code{func()}. These are not decomposed. Also one can use this argument to pass optional arguments to \code{numDeriv::grad()}.
