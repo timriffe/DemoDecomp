@@ -25,7 +25,7 @@ library(rhub)
 rhub_check()
 
 library(spelling)
-spell_check()
+spell_check_package()
 
 devtools::release()
 

@@ -14,6 +14,6 @@ A matrix with 19 rows and 6 columns
 Mxc1
 }
 \description{
-A matrix containing death rates for six causes (one of which is other) for abrdged age classes 0-85. Ages are labelled in rows, and causes in column names.
+A matrix containing death rates for six causes (one of which is other) for abridged age classes 0-85. Ages are labelled in rows, and causes in column names.
 }
 \keyword{datasets}

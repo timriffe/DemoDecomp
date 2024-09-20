@@ -3,7 +3,7 @@
 
 #' Year 2002 death rates by cause for US males in abridged age classes
 #'
-#' A matrix containing death rates for six causes (one of which is other) for abrdged age classes 0-85. Ages are labelled in rows, and causes in column names.
+#' A matrix containing death rates for six causes (one of which is other) for abridged age classes 0-85. Ages are labelled in rows, and causes in column names.
 #'
 #' @format 
 #' A matrix with 19 rows and 6 columns
