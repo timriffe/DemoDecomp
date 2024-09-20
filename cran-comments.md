@@ -16,7 +16,7 @@ This is a second release of the DemoDecomp package, adding a new method, and som
 all of the above were OK and returned
 0 errors | 0 warnings | 0 notes 
 
-Except the win-builder, which notes for all cases: "Version jumps in minor (submitted: 1.14.0, existing: 1.0.1)". 
+Except the win-builder, which notes for all cases: "Version jumps in minor (submitted: 1.14.1, existing: 1.0.1)". 
 
 2) Possibly mis-spelled words in DESCRIPTION are all cited author names, OK
 

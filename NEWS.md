@@ -1,4 +1,4 @@
-# Changes with version 1.14.2 
+# Changes with version 1.14.1 
 * DESCRIPTION updated to use Authors@R field properly
 
 # Changes with version 1.14.0 
