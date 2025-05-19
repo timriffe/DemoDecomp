@@ -54,6 +54,7 @@ ltre <- function (func, pars1, pars2, dfunc, N = 20, ...) {
   }
   cc     <- matrix(0, nrow = n, ncol = N)
   for (i in 1:N) {
+    # why not multiply by ddelta?
     cc[, i] <- dfunc(func, x[, i], ...) * delta
   }
   out <- rowMeans(cc)
