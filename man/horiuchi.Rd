@@ -4,38 +4,38 @@
 \alias{horiuchi}
 \title{Numeric Approximation of Continuous Decomposition}
 \usage{
-horiuchi(func, pars1, pars2, N, ...)
+horiuchi(func, pars1, pars2, N = 20, ..., components = seq_along(pars1))
 }
 \arguments{
-\item{func}{A function specified by the user. This must be able to take the vectors \code{rates1} or 
+\item{func}{A function specified by the user. This must be able to take the vectors `rates1` or 
 \code{rates2} as its argument, and to return the value of the function, \code{y}, when evaluated for 
 these rates. It may also have additional arguments, not to be decomposed.}
 
 \item{pars1}{vector of covariates to be passed on as arguments to \code{func()}. Covariates
-can be in any order, as long as \code{func()} knows what to do with them. \code{pars1} is for time 1 
-(or population 1).}
+can be in any order, as long as \code{func()} knows what to do with them. \code{pars1} is for time 1  (or population 1).}
 
 \item{pars2}{is the same as \code{pars2} but for time/population 2.}
 
 \item{N}{The number of intervals to integrate over.}
 
 \item{\dots}{optional parameters to pass on to \code{func()}. These are not decomposed.}
+
+\item{components}{A vector of non-missing group labels, with one element per parameter in \code{pars1} and \code{pars2}. Parameters sharing a label are perturbed jointly, producing one contribution per group. Labels may be numeric, character, or factor. By default each parameter is its own component. Supply this argument by name.}
 }
 \value{
-returns \code{effectmat}, a matrix of the variable effects that is organized in the same way as \code{pars1} and \code{pars2}.
+returns `cc`, a vector of the variable effects that is organized in the same way as `pars1` and `pars2`.
 }
 \description{
-This is an exact R implementation of the decomposition code in Matlab offered by the authors in
-the supplementary material given here: <http://www.demog.berkeley.edu/~jrw/Papers/decomp.suppl.pdf>. The 
-difference between \code{DecompContinuous()} and this function is that \code{DecompContinuousOrig} takes 
-\code{rates1} and \code{rates2} as single vectors, rather than as matrices, and output is also returned as a
-vector. This difference makes the function more flexible, but may add a step when writing the function to
-be decomposed. See examples.
+This is an exact R implementation of the decomposition code in Matlab offered by the authors in the supplementary material given here: <http://www.demog.berkeley.edu/~jrw/Papers/decomp.suppl.pdf>. The input of `horiuchi()` are vectors `pars1` and `pars2`, and the user-supplied function `func()` should handle the bookkeeping of these as well as return a scalar. See examples for how to define `func()`, tips for handling the bookkeeping using the `...` arg, and how to use the (new) `components` argument to reduce computational burden.
 }
 \details{
-The decomposition works by assuming a linear change in all parameters between \code{pars1} and \code{pars2}. At each small step approaching time 2 (the size of which is \code{1/N}) each parameter is moved forward along its linear trajectory. One at a time, each covariate (of which there are ages*variables of) is switched out twice, once for its value at 1/(2N) forward and once for its value at 1/(2N) backward in time. The difference between \code{func()} evaluated with these two rate matrices is the change in \code{y}attributable to that particular covariate and that particular time step. Summing over all N time steps, we get the contribution to the difference of each covariate, \code{effectmat}. The sum of \code{effectmat} should come very close to \code{func(rates2)-func(rates1)}. The error decreases with larger \code{N}, but there is not much point in having an \code{N} higher than 100, and 20 is usually sufficient. This ought to be able to handle a very wide variety of functions. 
+The decomposition works by assuming a linear change in all parameters between `pars1` and `pars2`. At each small step approaching time 2 (the size of which is `1/N` times the parameter difference) each parameter is moved forward along its linear trajectory. One at a time, each parameter is perturbed twice, once upward (proportional to `1/(2*N)`) and once downward. The difference between `func()` evaluated with these two rate vectors is the change in the scalar output attributable to that particular parameter and that particular interpolation step. Summing contributions over all N interpolation steps, we get the contribution to the difference of each parameter, `cc`. The sum of `cc` should come very close to `func(rates2)-func(rates1)`. The error decreases with larger `N`, but there is not much point in having an `N` higher than 100, and 20 (default) is usually sufficient. This ought to be able to handle a very wide variety of functions. 
 
-If \code{pars1} are observations from 2005 and \code{pars2} are observations from 2006 an \code{N} of 20 would imply a delta of 1/20 of a year for each integration step. Higher \code{N} provides finer results (a lower total residual), but takes longer to compute. In general, there are decreasing returns to higher \code{N}. \code{sum(effectmat)} ought to approximate \code{func(rates2)-func(rates1)}.
+If `pars1` are observations from 2005 and `pars2` are observations from 2006 an `N` of 20 would imply a delta of 1/20 of a year for each integration step. Higher `N` gives a lower total residual, but takes longer to compute. In general, there are decreasing returns to higher `N`. `sum(cc)` ought to approximate `func(rates2)-func(rates1)`.
+
+(new) if `components` is supplied, all parameters in a component are perturbed together, while the full parameter vector is still passed to `func()`. This computes grouped contributions directly and reduces the number of function evaluations from  `2*N*length(pars1)` to `2*N*length(unique(components))`. This makes sense for large decomposition problems where results are destined to be aggregate for display purposes: in this case, just declare the groupings in advance and get back results pre-aggregated far faster.
+
+Increase \code{N} to assess numerical convergence.
 }
 \examples{
 
@@ -105,9 +105,45 @@ text(seq(from=0,to=90,by=10),-.027,seq(from=0,to=90,by=10),pos=1,xpd=T)
 legend("bottomright",fill=c("yellow","green"),legend=c("contrib from change in Lx",
 "contrib from change in Fx"),title="age specific contrib of changes in Fx and Lx",bg="white") 
 }
+# Direct grouped decomposition, retaining single-age inputs.
+# LEdecomp is optional and is used only for its example dataset.
+if (requireNamespace("LEdecomp", quietly = TRUE)) {
+  example_env <- new.env()
+  utils::data("US_data_CoD", package = "LEdecomp", envir = example_env)
+  cod <- example_env$US_data_CoD
+  cod <- cod[cod$year == 2010, ]
+  keys <- c("age", "cause_id")
+  male <- cod[cod$sex == "Male", c(keys, "mxc")]
+  female <- cod[cod$sex == "Female", c(keys, "mxc")]
+  names(male)[3] <- "Male"
+  names(female)[3] <- "Female"
+  rates <- merge(male, female, by = keys, sort = FALSE)
+  rates <- rates[order(rates$age, rates$cause_id), ]
+  rates$age10 <- rates$age - rates$age \%\% 10
 
+  # Illustrative truncated expectancy, assuming unit age intervals.
+  # Bookkeeping data are passed through ... and are not decomposed.
+  expectancy <- function(mxc, data) {
+    mx <- rowsum(mxc, group = data$age, reorder = TRUE)[, 1]
+    sum(c(1, exp(-cumsum(mx)))) - 0.5
+  }
+
+  # Integer IDs preserve the mapping to the original group columns.
+  labels <- interaction(rates$age10, rates$cause_id, drop = TRUE)
+  component <- match(labels, unique(labels))
+  grouped <- horiuchi(expectancy, rates$Male, rates$Female, N = 20,
+                     data = rates, components = component)
+  result <- rates[!duplicated(component), c("age10", "cause_id")]
+  result$cc <- unname(grouped)
+  head(result)
+
+  # Contributions should approximate the overall expectancy difference.
+  difference <- expectancy(rates$Female, rates) -
+                expectancy(rates$Male, rates)
+  c(difference = difference, contributions = sum(result$cc),
+    residual = difference - sum(result$cc))
+}
 }
 \references{
-\insertRef{andreev2002algorithm}{DemoDecomp}
-\insertRef{andreev2002algorithm}{DemoDecomp}
+\insertRef{horiuchi2008decomposition}{DemoDecomp}
 }

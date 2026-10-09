@@ -7,13 +7,12 @@
 ltre(func, pars1, pars2, dfunc, N = 20, ...)
 }
 \arguments{
-\item{func}{A function specified by the user. This must be able to take the vectors \code{rates1} or 
+\item{func}{A function specified by the user. This must be able to take the vectors `rates1` or 
 \code{rates2} as its argument, and to return the value of the function, \code{y}, when evaluated for 
 these rates. It may also have additional arguments, not to be decomposed.}
 
 \item{pars1}{vector of covariates to be passed on as arguments to \code{func()}. Covariates
-can be in any order, as long as \code{func()} knows what to do with them. \code{pars1} is for time 1 
-(or population 1).}
+can be in any order, as long as \code{func()} knows what to do with them. \code{pars1} is for time 1  (or population 1).}
 
 \item{pars2}{is the same as \code{pars2} but for time/population 2.}
 

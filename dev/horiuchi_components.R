@@ -69,31 +69,34 @@ cc_standard |>
   geom_col(position = "dodge")+
   labs(title = "Hell yes again, we have a match!")
 
-horiuchi2 <- function (func, pars1, pars2, components = 1:length(pars1), N=20, ...) {
-  d       <- pars2 - pars1
-  ii      <- unique(components)
-  n       <- length(ii)
-  nn      <- length(components)
-  delta   <- d/N
-  grad    <- matrix(rep(0.5:(N - 0.5)/N, nn), byrow = TRUE, ncol = N)
-  x       <- pars1 + d * grad
-  cc      <- matrix(0, nrow = n, ncol = N)
-  rownames(cc) <- ii
-  zeros   <- rep(0,nn)
 
-  for (j in 1:N) {
-    for (i in ii) {
-      ind      <- components == i
-      deltai <- zeros 
-      deltai[ind] <- delta[ind]
-      cc[i, j] <- func((x[, j] + deltai), ...) - 
-                  func((x[, j] - deltai), ...)
+  horiuchi2 <- function(func, pars1, pars2,
+                        components = seq_along(pars1), N = 20, ...) {
+    d          <- pars2 - pars1
+    ii         <- unique(components)
+    n          <- length(ii)
+    nn         <- length(components)
+    half_delta <- d / (2 * N)
+    grad       <- matrix(rep(0.5:(N - 0.5) / N, nn),
+                         byrow = TRUE, ncol = N)
+    x          <- pars1 + d * grad
+    cc         <- matrix(0, nrow = n, ncol = N)
+    zeros      <- rep(0, nn)
+    
+    for (j in seq_len(N)) {
+      for (i in seq_along(ii)) {
+        ind         <- components == ii[i]
+        deltai      <- zeros
+        deltai[ind] <- half_delta[ind]
+        cc[i, j]    <- func(x[, j] + deltai, ...) -
+          func(x[, j] - deltai, ...)
+      }
     }
+    
+    out        <- rowSums(cc)
+    names(out) <- as.character(ii)
+    out
   }
-  out <- rowSums(cc)
-  names(out) <- ii
-  out
-}
 
 
 
